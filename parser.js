@@ -27,7 +27,8 @@ const prettifiedCode = prettier.format(output, { parser: 'babylon' })
 
 fs.writeFile('transformed.js', prettifiedCode, (err) => {
   if (error) {
-    throw new Error(`addToReducerIndex.js write error: ${err}`)
+    console.error(error)
+    throw new Error(`couldn't write to file`)
   } else {
     console.log('file was written successfully')
   }
